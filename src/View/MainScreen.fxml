@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<?import View.MazeDisplayer?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#KeyPressed" prefHeight="469.0" prefWidth="680.0" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+  <columnConstraints>
+    <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+    <RowConstraints />
+  </rowConstraints>
+    <children>
+        <BorderPane fx:id="border" prefHeight="470.0" prefWidth="686.0" style="-fx-background-image: url('images/main.jpeg')" stylesheets="@MainStyle.css" GridPane.rowIndex="1">
+            <left>
+                <GridPane alignment="CENTER" prefHeight="407.0" prefWidth="254.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.66665649414062" minWidth="10.0" prefWidth="142.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.3333231608073" minWidth="10.0" prefWidth="117.33333333333331" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="90.4" minHeight="31.4" prefHeight="64.33334541320801" />
+                        <RowConstraints maxHeight="109.33332443237306" minHeight="0.0" prefHeight="66.33335367838542" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="210.0" minHeight="1.4000000000000057" prefHeight="57.66666666666666" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="278.99997456868493" minHeight="1.4000000000000057" prefHeight="64.00002034505209" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="278.99997456868493" minHeight="10.0" prefHeight="61.33332316080731" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="278.99997456868493" minHeight="0.6666717529296875" prefHeight="49.333343505859375" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="278.99997456868493" minHeight="10.0" prefHeight="56.666656494140625" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="lbl_rowsNum" prefHeight="22.0" prefWidth="137.0" text="Number Of Rows : ">
+                            <font>
+                                <Font name="Georgia Bold Italic" size="13.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbl_columnsNum" prefHeight="24.0" prefWidth="135.0" text="Number Of Columns :" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Georgia Bold Italic" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="rowsNumber" prefHeight="26.0" prefWidth="58.0" text="10" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Calibri Bold" size="15.0" />
+                     </font>
+                  </TextField>
+                        <TextField fx:id="columnsNumber" prefHeight="26.0" prefWidth="58.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Calibri Bold" size="15.0" />
+                     </font>
+                  </TextField>
+                        <Button fx:id="btn_generateMaze" alignment="CENTER" contentDisplay="CENTER" onAction="#startPlay" prefHeight="47.0" prefWidth="171.0" text="Generate Maze " textFill="WHITE" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Hadassah Friedlaender Bold" size="16.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="solutionButton" alignment="CENTER" contentDisplay="CENTER" disable="true" mnemonicParsing="false" onAction="#showSolutionAction" prefHeight="43.0" prefWidth="160.0" text="Solve Maze " textFill="WHITE" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="Hadassah Friedlaender Bold" size="17.0" />
+                            </font>
+                        </Button>
+                  <Label GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label prefHeight="37.0" prefWidth="131.0" text="Player Row =" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Hadassah Friedlaender Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label contentDisplay="CENTER" prefHeight="32.0" prefWidth="151.0" text="Player Column =" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Hadassah Friedlaender Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_CurRowsNum" prefHeight="33.0" prefWidth="57.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_CurColNum" prefHeight="38.0" prefWidth="59.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Calibri Bold" size="17.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </GridPane>
+            </left>
+            <top>
+                <MenuBar fx:id="MenuBar" prefHeight="35.0" prefWidth="643.0" BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#newAction" text="New" />
+                                <MenuItem fx:id="saveMenu" disable="true" mnemonicParsing="false" onAction="#saveGameAction" text="Save" />
+                                <MenuItem fx:id="loadMenu" mnemonicParsing="false" onAction="#loadGameAction" text="Load" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Exit" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Options">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#openProperties" text="Properties" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#helpAction" text="About the Game" />
+                        <MenuItem mnemonicParsing="false" onAction="#aboutAction" text="About Us" />
+                            </items>
+                        </Menu>
+                    </menus>
+                    <padding>
+                        <Insets bottom="10.0" />
+                    </padding>
+                </MenuBar>
+            </top>
+            <center>
+                <Pane onKeyPressed="#KeyPressed" BorderPane.alignment="CENTER">
+                    <children>
+                        <MazeDisplayer fx:id="mazeDisplayer" height="400.0" width="400.0" imageFileNameWall="./resources/images/wall.jpeg" />
+                    </children>
+                </Pane>
+            </center>
+        </BorderPane>
+    </children>
+
+
+
+
+
+
+
+
+
+</GridPane>

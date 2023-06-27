@@ -1,0 +1,42 @@
+.dialog-pane{
+    -fx-border-color:linear-gradient(#383838, #838383);
+    -fx-border-width:2px;
+}
+
+/**Customization of The Bar where the buttons are located**/
+.dialog-pane > .button-bar > .container {
+    -fx-background-color:linear-gradient(#183838, #238383);
+}
+
+
+/**Customization of Buttons**/
+.label{
+    -fx-text-fill: #00ff6f;
+    -fx-font-weight: bold;
+}
+
+.button{
+    -fx-background-color: linear-gradient(#3eff00, rgb(14, 5, 5));
+    -fx-background-radius: 50;
+}
+
+.button:hover{
+    -fx-background-color: #8bb493;
+    -fx-font-weight:bold;
+}
+
+.text-area{
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+}
+
+.menu-bar {
+    -fx-background-color: linear-gradient(#383838, #838383);/* The menu bar itself */ }
+.menu { /* The File menu item */ }
+.menu:showing { /* menu when it's being shown (activated) */ }
+.menu .label { /* Styles the text on a menu item */ }
+.menu:showing .label { /* Styles the text on a menu item when activated */ }
+.context-menu {
+    -fx-background-color: linear-gradient(#383838, #838383);
+    -fx-skin-color: blue;
+}
