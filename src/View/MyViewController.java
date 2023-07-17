@@ -351,10 +351,10 @@ public class MyViewController implements Observer, IView {
      */
     public void helpAction(ActionEvent actionEvent) {
         String message = "This is a maze runner game.\nFirst you need to define the maze size and hit" +
-                " the 'Generate Maze' button.\nUse the NumPad keys and help the survivor" +
+                " the 'Generate Maze' button.\nUse the arrows and the NumPad keys and help the survivor" +
                 " to get out of the maze alive!\nYou can use the 'Solve Maze' button\nIf you are unable to solve the maze!\n\n\n" +
-                "Keys Guide:\n\n" + "regular buttons:\n" + "Number 8.\n" + "Number 2.\n" + "Number 6.\n" +
-                "Number 4.\n\n" + "Diagonal buttons:\n" + "Number 9.\n" + "Number 3.\n" + "Number 7.\n" + "Number 1.";
+                "Keys Guide:\n\n" + "regular buttons:\n" + "UP : arrow up | number 8.\n" + "DOWN : arrow down | number 2.\n" + "RIGHT : arrow right | number 6.\n" +
+                "LEFT : arrow left | number 4.\n\n" + "Diagonal buttons:\n" + "RIGHT UP : number 9.\n" + "RIGHT DOWN : number 3.\n" + "LEFT UP : number 7.\n" + "LEFT DOWN : number 1.";
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Help");
         alert.setHeaderText("User's Guide:");
@@ -397,7 +397,7 @@ public class MyViewController implements Observer, IView {
      * @param actionEvent: action event.
      */
     public void aboutAction(ActionEvent actionEvent) {
-        String str = "This game was developed by Ahmad Yousef & Jawad Dabbah.\n\n" + "We used two generating algorithms: 1) SimpleGenerator that is generates a simple maze.\n" +
+        String str = "This game was developed by Eliya Ballout & Bahaa Rayyan.\n\n" + "We used two generating algorithms: 1) SimpleGenerator that is generates a simple maze.\n" +
                 "2) MyGenerator: its generates a maze based on randomized Prim's algorithm.\n\n" + "For solving the maze we used 3 algorithms: BFS, DFS, Best First Search(BFS).\n\n" +
                 "We are still new to this so we apologize for any technical issues you might encounter while running it, but we promise that we'll fix it if you contact us and let us know.\n";
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
