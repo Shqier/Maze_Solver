@@ -10,6 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="javafx" level="project" />
-    <orderEntry type="library" exported="" name="ATPProjectJAR" level="project" />
+    <orderEntry type="library" exported="" name="MazeSolverJAR" level="project" />
   </component>
 </module>
